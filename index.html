@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="game.js"></script>
+<title>Crystal Collector</title>
+<body>
+<h1>Crystal Collector Game</h1>
+<p>You will be given a random numnber at the beginning of the game
+There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score
+You win the game by matching your total score to the random number, you lose the game by going above the random number.
+The value of each crystal is hidden from you until you click on it.
+Each time when the game starts, the game will change the value of each crystal.</p>
+<div id="game">
+<p>This Round's Number: </p>
+<p>Wins: </p>
+<p>Losses: </p>
+<p>Your Total Score Is: </p>
+</div>
+<img id= "c1" src="crystalone.png">
+<img id= "c2" src="crystaltwo.png">
+<img id= "c3" src="crystalthree.png">
+<img id= "c4" src="crystalfour.png">
+</body>
+
+
+
+
+<script>
+//crystals//
+var 
+    crystalOne= Math.floor(Math.random() * 12) +1;
+    crystalTwo= Math.floor(Math.random() * 12) +1;
+    crystalThree= Math.floor(Math.random() * 12) +1;
+    crystalFour= Math.floor(Math.random() * 12) +1;
+//Scores//
+var wins= 0,
+    losses= 0,
+    totalScore= 0;
+//Round number//
+    var number= Math.floor(Math.random() * 120) +19;
+//crystal properties//
+$("#c1").on("click", function(one) {
+    console.log(crystalOne);
+})
+$("#c2").on("click", function(two) {
+    console.log(crystalTwo);
+})
+$("#c3").on("click", function(three) {
+    console.log(crystalThree);
+})
+$("#c4").on("click", function(four) {
+    console.log(crystalFour);
+})
+var html = "<p>This Round's Number: "+ number + "</p>" +
+"<p>Wins: "+ wins + "</p>" +
+"<p>Losses: "+ losses + "</p>" +
+"<p>Your Total Score Is: "+ totalScore;
+
+document.querySelector('#game').innerHTML = html;
+</script>
